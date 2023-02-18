@@ -15,6 +15,25 @@
 
 #define SPC_E RA(N5)
 
+#define WM_UP LG(UP)
+#define WM_DOWN LG(DOWN)
+#define WM_LEFT LG(LEFT)
+#define WM_RIGHT LG(RIGHT)
+
+#define WM_1 LG(N1)
+#define WM_2 LG(N2)
+#define WM_3 LG(N3)
+#define WM_4 LG(N4)
+#define WM_5 LG(N5)
+#define WM_6 LG(N6)
+#define WM_7 LG(N7)
+#define WM_8 LG(N8)
+#define WM_9 LG(N9)
+#define WM_0 LG(N0)
+
+#define WM_LAUN LG(D)
+#define WM_FSCR LG(F)
+
 #define DEFAULT    0
 #define NAVIGATION 1
 #define NUMBER     2
@@ -79,11 +98,11 @@
 // |  CTRL |  Z  |  X  |  C   |  D      |  V   |  MUTE |  |       |  K   | H       |  ,    |  .   |   /   |   -  |
 //               | GUI | ALT  | NAV_UML | SPACE|  ALT  |  | RETURN| SHIFT| NUM_SYM | ----- | F12  |
             bindings = <
-&kp LSHFT &kp N1 &kp N2   &kp N3 &kp N4                    &kp N5                         &kp N6     &kp N7    &kp N8    &kp N9   &kp N0   &none
-&kp ESC   &kp Q  &kp W    &kp F  &kp P                     &kp B                          &kp J      &kp L     &kp U     &kp Y    &kp SEMI &bkdel
-&kp TAB   &kp A  &kp R    &kp S  &kp T                     &kp G                          &kp M      &kp N     &kp E     &kp I    &kp O    &kp SQT
-&kp LCTRL &kp Z  &kp X    &kp C  &kp D                     &kp V     &kp T     &WM_FLOAT  &kp K      &kp H     &kp COMMA &kp DOT  &kp FSLH &kp MINUS
-                 &kp LGUI &none  &mo_to UMLAUT NAVIGATION &kp SPACE  &kp LALT  &kp RETURN &kp LSHFT  &none     &none     &kp F12
+&kp LSHFT &kp N1 &kp N2   &kp N3 &kp N4                    &kp N5                         &kp N6     &kp N7               &kp N8    &kp N9   &kp N0   &none
+&kp ESC   &kp Q  &kp W    &kp F  &kp P                     &kp B                          &kp J      &kp L                &kp U     &kp Y    &kp SEMI &bkdel
+&kp TAB   &kp A  &kp R    &kp S  &kp T                     &kp G                          &kp M      &kp N                &kp E     &kp I    &kp O    &kp SQT
+&kp LCTRL &kp Z  &kp X    &kp C  &kp D                     &kp V     &kp T     &WM_FLOAT  &kp K      &kp H                &kp COMMA &kp DOT  &kp FSLH &kp MINUS
+                 &kp LGUI &none  &mo_to UMLAUT NAVIGATION  &kp SPACE &kp LALT  &kp RETURN &kp LSHFT  &mo_to SYMBOL NUMBER &none     &kp F12
             >;
 
             sensor-bindings = <&inc_dec_kp S T &inc_dec_kp D V>;
@@ -98,11 +117,11 @@
 // |       | --- | --- |  --- |  --- |  --- |        |  |       |  --- |  ---  |  ---  |  ---  |  ---  |  ---  |
 //               |     |  --- |  --- |      |        |  |       |      |  ---  |  ---  |  ---  |
             bindings = <
-&to DEFAULT &none     &none  &none &none &none                  &none     &none    &none    &none     &none   &none
-&to DEFAULT &none     &none  &none &none &none                  &kp PG_UP &kp HOME &kp UP   &kp END   &kp DEL &trans
-&trans      &none     &none  &none &none &none                  &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp INS &none
-&trans      &none     &none  &none &none &none  &trans   &trans &none    &none    &none    &none     &none   &trans
-                      &trans &none &none &trans &trans   &trans &trans   &none    &none    &none
+&to DEFAULT &none     &none  &none &none &none                  &none     &none       &none    &none     &none   &none
+&to DEFAULT &none     &none  &none &none &none                  &kp PG_UP &kp HOME    &kp UP   &kp END   &kp DEL &trans
+&trans      &none     &none  &none &none &none                  &kp PG_DN &kp LEFT    &kp DOWN &kp RIGHT &kp INS &none
+&trans      &none     &none  &none &none &none  &trans   &trans &none     &none       &none    &none     &none   &trans
+                      &trans &none &none &trans &trans   &trans &trans    &to WINDOWM &none    &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -117,11 +136,11 @@
 // |       | --- | F1  |  F2  |  F3  |  F12 |        |  |       |  --- |   1   |   2   |   3   |   =   |   -   |
 //               |     |  --- |  --- |      |        |  |       |      |   0   |   0   |  ---  |
             bindings = <
-&to DEFAULT &none     &none  &none  &none  &none                   &none  &none     &none     &none     &none     &none
-&to DEFAULT &none     &kp F7 &kp F8 &kp F9 &kp F10                 &none  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp SEMI  &trans
-&trans      &none     &kp F4 &kp F5 &kp F6 &kp F11                 &none  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp COMMA &kp DOT
-&trans      &none     &kp F1 &kp F2 &kp F3 &kp F12 &trans   &trans &none  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp EQUAL &kp MINUS
-                      &trans &none  &none  &trans  &trans   &trans &trans &kp KP_N0 &kp KP_N0 &none
+&to DEFAULT &none     &none  &none  &none       &none                   &none  &none     &none     &none     &none     &none
+&to DEFAULT &none     &kp F7 &kp F8 &kp F9      &kp F10                 &none  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp SEMI  &trans
+&trans      &none     &kp F4 &kp F5 &kp F6      &kp F11                 &none  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp COMMA &kp DOT
+&trans      &none     &kp F1 &kp F2 &kp F3      &kp F12 &trans   &trans &none  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp EQUAL &kp MINUS
+                      &trans &none  &to WINDOWM &trans  &trans   &trans &trans &kp KP_N0 &kp KP_N0 &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -130,16 +149,16 @@
         symbol_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // -------------------------------------------------------------------------------------------------------------
-// | BACK  | --- | --- |  --- |  --- |  --- |                   |  --- |  ---  |  ---  |  ---  |  ---  |  ---  |
-// | BACK  |  !  |  @  |   {  |   }  |   *  |                   |  --- |  ---  |  ---  |  ---  |  ---  |       |
+// |       | --- | --- |  --- |  --- |  --- |                   |  --- |  ---  |  ---  |  ---  |  ---  |  ---  |
+// |       |  !  |  @  |   {  |   }  |   *  |                   |  --- |  ---  |  ---  |  ---  |  ---  |       |
 // |       |  #  |  $  |   (  |   )  |   `  |                   |  --- |   =   |   €   |  ---  |  ---  |  ---  |
 // |       |  %  |  ^  |   [  |   ]  |   ~  |        |  |       |  --- |   \|  |   &   |  ---  |  ---  |  ---  |
 //               | --- |  --- |  --- |      |        |  |       |      |  ---  |  ---  |  ---  |
             bindings = <
-&to DEFAULT &none     &none     &none    &none    &none                     &none    &none     &none     &none     &none   &none
-&to DEFAULT &kp EXCL  &kp AT    &kp LBRC &kp RBRC &kp STAR                  &none    &none     &none     &none     &none   &trans
-&trans      &kp HASH  &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE                 &none    &kp EQUAL &kp SPC_E &none     &none    &none
-&trans      &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp TILDE &trans   &trans &none    &kp BSLH  &kp AMPS  &none     &none   &trans
+&trans &none     &none     &none    &none    &none                     &none    &none     &none     &none     &none   &none
+&trans &kp EXCL  &kp AT    &kp LBRC &kp RBRC &kp STAR                  &none    &none     &none     &none     &none   &trans
+&trans &kp HASH  &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE                 &none    &kp EQUAL &kp SPC_E &none     &none    &none
+&trans &kp PRCNT &kp CARET &kp LBKT &kp RBKT &kp TILDE &trans   &trans &none    &kp BSLH  &kp AMPS  &none     &none   &trans
                       &none     &none    &none    &trans    &trans   &trans &trans   &none     &none     &none
             >;
 
@@ -160,18 +179,18 @@
         
         wm_layer {
 // TODO: Some binds are waiting for shifted keycode support.
-// -------------------------------------------------------------------------------------------------------------
-// | BACK  | --- | --- |  --- |  --- |  --- |                   |  --- |  ---  |  ---  |  ---  |  ---  |  ---  |
-// | BACK  | --- | --- |  --- |  --- |  --- |                   |  PGU |  HOM  |  UP   |  END  |  DEL  |  BKSP |
-// |       | --- | --- |  --- |  --- |  --- |                   |  PGD |  LEFT |  DOWN | RIGHT |  INS  |  ---  |
-// |       | --- | --- |  --- |  --- |  --- |        |  |       |  --- |  ---  |  ---  |  ---  |  ---  |  ---  |
-//               | --- |  --- |  --- |      |        |  |       |      |  ---  |  ---  |  ---  |
+// --------------------------------------------------------------------------------------------------------------
+// | BACK  | ---  | --- |  --- |  --- |  --- |                   |  --- |  ---  |  ---  |  ---  |  ---  |  ---  |
+// | BACK  | KILL | LA7 |  LA8 |  LA9 |  --- |                   |  --- |  ---  |  UP   |  ---  |  ---  |  ---  |
+// |       | LAUN | LA4 |  LA5 |  LA6 |  --- |                   |  --- |  LEFT |  DOWN | RIGHT |  ---  |  ---  |
+// |       | FULL | LA1 |  LA2 |  LA3 |  --- |        |  |       |  --- |  ---  |  ---  |  ---  |  ---  |  ---  |
+//                | --- |  --- |  LA0 |      |        |  | ----- |      |  ---  |  ---  |  ---  |
             bindings = <
-&to DEFAULT &none     &none &none &none &none                 &none     &none    &none    &none     &none   &none
-&to DEFAULT &none     &none &none &none &none                 &kp PG_UP &kp HOME &kp UP   &kp END   &kp DEL &trans
-&trans      &none     &none &none &none &none                 &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &kp INS &none
-&trans      &none     &none &none &none &none  &trans   &trans &none    &none    &none    &none     &none   &trans
-                      &none &none &none &trans &trans   &trans &trans   &none    &none    &none
+&to DEFAULT &none       &none    &none    &none    &none                  &none  &none       &none       &none        &none   &none
+&to DEFAULT &WM_KILL    &kp WM_7 &kp WM_8 &kp WM_9 &none                  &none  &none       &kp WM_UP   &none        &none   &none
+&trans      &kp WM_LAUN &kp WM_4 &kp WM_5 &kp WM_6 &none                  &none  &kp WM_LEFT &kp WM_DOWN &kp WM_RIGHT &none   &none
+&trans      &kp WM_FSCR &kp WM_1 &kp WM_2 &kp WM_3 &none  &trans   &trans &none  &none       &none       &none        &none   &none
+                        &none    &none    &kp WM_0 &trans &trans   &none  &trans &none       &none       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
