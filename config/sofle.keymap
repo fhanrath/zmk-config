@@ -108,14 +108,14 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&to>;
         };
-        td_uml_nav: behavior_mo_tap_dance {
+        td_uml_nav: behavior_td_uml_nav {
             compatible = "zmk,behavior-tap-dance";
             label = "Tap Dance Umlaut Navigation";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo UMLAUT>, <&mo NAVIGATION>;
         };
-        td_sym_num: behavior_mo_tap_dance {
+        td_sym_num: behavior_td_sym_num {
             compatible = "zmk,behavior-tap-dance";
             label = "Tap Dance Symbol Number";
             #binding-cells = <0>;
