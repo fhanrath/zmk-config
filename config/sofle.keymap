@@ -217,10 +217,10 @@ BACKSHIFT   &none     &kp F7 &kp F8 &kp F9      &kp F10                 &none  &
 //                | --- |  --- |  LA0 |      |        |  |       |      |  ---  |  ---  |  ---  |
             bindings = <
 &trans      &none       &none    &none    &none    &none                  &none  &none       &none       &none        &none   &none
-BACKSHIFT   &WM_KILL    &kp WM_7 &kp WM_8 &kp WM_9 &none                  &none  &none       &kp WM_UP   &none        &none   &none
+BACKSHIFT   &WM_KILL    &kp WM_7 &kp WM_8 &kp WM_9 &kp WM_0               &none  &none       &kp WM_UP   &none        &none   &none
 &trans      &kp WM_LAUN &kp WM_4 &kp WM_5 &kp WM_6 &none                  &none  &kp WM_LEFT &kp WM_DOWN &kp WM_RIGHT &none   &none
 &trans      &kp WM_FSCR &kp WM_1 &kp WM_2 &kp WM_3 &none  &trans   &trans &none  &none       &none       &none        &none   &none
-                        &none    &none    &kp WM_0 &trans &trans   &trans  &trans &none       &none       &none
+                        &none    &none    &none    &trans &trans   &trans  &trans &none       &none       &none
             >;
 
             sensor-bindings = <&inc_dec_kp WM_A_DEC WM_A_INC &inc_dec_kp WM_A_DEC WM_A_INC>;
